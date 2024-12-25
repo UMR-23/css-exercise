@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+</head>
+
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+
+    }
+
+    .app {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(rgb(164, 234, 224), rgb(219, 188, 232));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shell {
+        position: relative;
+        width: 53vw;
+        height: 66vh;
+        border-radius: 10px;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    form {
+        position: relative;
+        width: 62%;
+        height: 100%;
+        background-color: aliceblue;
+        border-radius: 15px;
+        box-shadow: 0 5px 10px rgb(166, 235, 231);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    img {
+        width: 350px;
+        height: 100%;
+    }
+    img:hover{
+        transform: scale(1.1);
+    }
+
+    .formBody {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .wordAre {
+        font: 700 30px '';
+        color: rgb(97, 96, 99);
+        margin: 10px 0;
+    }
+
+    .f-inp {
+        width: 250px;
+        border: 2px rgb(45, 44, 44) solid;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    input {
+        width: 300px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .f-inp {
+        margin: 8px 0;
+        padding: 0 8px;
+    }
+
+    .submit-btn {
+        width: 120px;
+        height: 40px;
+        background-color: rgb(152, 229, 206);
+        box-shadow: 0 5px 10px rgb(70, 53, 53);
+        border-radius: 10px;
+        margin: 25px 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .loginBtn {
+        font: 400 15px '';
+        color: aliceblue;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background-color: rgb(234, 167, 171);
+        border: 0 2px 5px rgb(243, 85, 85);
+        transform: scale(1.1);
+    }
+
+    .registerGo {
+        cursor: pointer;
+
+    }
+</style>
+
+
+<body>
+    <div class="app">
+        <div class="shell">
+            <div class="img">
+                <img src="./1.pgn.avif" alt="">
+            </div>
+            <form action="">
+                <div class="formBody">
+                    <div class="wordAre">
+                        <div class="inline-1">Hi,欧尼酱</div>
+                        <div class="inline-2">Welcome Back</div>
+                    </div>
+
+                    <div class="input">
+                        <div class="f-inp">
+                            <input type="text" placeholder="Email Address">
+                        </div>
+                        <div class="f-inp">
+                            <input type="password" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="submit-btn">
+                        <button class="loginBtn">LOGIN</button>
+                    </div>
+
+
+                    <p class="registerGo">go register</p>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

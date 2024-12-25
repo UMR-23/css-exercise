@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+</head>
+
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        /* 有他就不会担心div里面的内容溢出盒子 */
+        box-sizing: border-box;
+    }
+
+    #app {
+        min-height: 100vh;
+        background: url(./imgs/05.png) center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .table {
+        height: 80vh;
+        width: 70vw;
+        background-color: rgba(234, 225, 238, 0.333);
+        box-shadow: 0 8px 16px rgb(32, 30, 30);
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .head {
+        width: 100%;
+        height: 10%;
+        background-color: #fff4;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .head .input-group {
+        width: 35%;
+        height: 50%;
+        background-color: rgb(175, 224, 237, 0.3);
+        padding: 0 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+    }
+
+    .head .input-group:hover {
+        width: 40%;
+        background-color: rgb(235, 219, 219, 0.5);
+        box-shadow: 0 5px 40px rgb(116, 210, 150);
+    }
+
+    .input-group img {
+        width: 25px;
+        height: 20px;
+    }
+
+    .head .input-group input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .shell {
+        width: 95%;
+        max-height: calc(90% - 25px);
+        background-color: #fffb;
+        margin: 8px auto;
+        border-radius: 10px;
+        overflow: auto;
+        /* 也是滚动条，但是不会占空间 */
+        overflow: overlay;
+    }
+
+    /* 滚动条大小设置 */
+    .shell::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        margin-right: 10px;
+        /* 例如，如果你有一个行内元素（如 <span> 或 <img>），并且你希望它与周围的文本垂直居中，你可以这样设置： */
+        vertical-align: middle;
+    }
+
+    table,
+    th,
+    td {
+        /* 边框的间隙 ,现在这是默认效果*/
+        border-collapse: collapse;
+        padding: 25px;
+        text-align: left;
+    }
+
+    thead th {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: rgb(227, 235, 234);
+    }
+
+    tbody td {
+        /* 当鼠标移到上面，会变化鼠标，提示你这个东西可以操作 */
+        cursor: pointer;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #db27270b;
+    }
+
+    tbody tr:hover {
+        background-color: #fff6 !important;
+    }
+
+    .operation{
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .button { 
+        width: 70px;
+        height: 40px;
+       padding: 10px 15px;
+       margin: 0px 10px;
+     
+        border-radius: 30px;
+       
+    }
+
+    tr:nth-child(4n) .button {
+        background-color: #86e49d;
+        color: #006b21;
+    }
+
+    tr:nth-child(4n-1) .button {
+        background-color: #ebc474;
+    }
+
+    tr:nth-child(4n+1) .button {
+        background-color: #d893a3;
+        color: #b30021;
+    }
+
+    tr:nth-child(4n+2) .button {
+        background-color: #6fcaea;
+    }
+</style>
+
+
+<body>
+    <div id="app">
+        <div class="table">
+            <section class="head">
+                <h1>碧蓝档案</h1>
+                <div class="input-group">
+                    <input type="search" placeholder="查询">
+                    <img src="./imgs/search.png">
+                </div>
+            </section>
+
+            <section class="shell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>School</th>
+                            <th>LastTime</th>
+                            <th>Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="./imgs/05.png">未花</td>
+                            <td>圣三一</td>
+                            <td>2024-11-29</td>
+                            <td class="operation">
+                                <span class="button">删除</span>
+                                <span class="button">修改</span>
+                            </td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</body>
+
+<script>
+
+
+</script>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    /* 背景设置 */
+    #app {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to right, #9795f0 0%, #fbc8d4 100%);
+    }
+
+    /* 内容盒子大小设置 */
+    .shell {
+        width: 650px;
+        height: 580px;
+        background-color: azure;
+        box-shadow: 2px 2px 5px rgb(224, 184, 249);
+        position: relative;
+    }
+
+    .head {
+        width: 100%;
+        height: 320px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .head::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: url("./img/1.jpg");
+        background-size: cover;
+        z-index: -1;
+        transform: skewY(-4deg);
+        transform-origin: 0 0;
+    }
+
+
+    .cover {
+        position: absolute;
+        top: 180px;
+        left: 30px;
+        width: 200px;
+        border-radius: 50%;
+        z-index: 2;
+        /* 边框宽度，颜色，边框样式 */
+        border: 10px #fff solid;
+        /* 产生阴影，参数效果:像右，向下移动,阴影透明程度，阴影颜色 */
+        box-shadow: 0 5px 10px rgba(38, 29, 29, 0.3);
+    }
+
+    .data {
+        padding: 180px 0 0 250px;
+        /* 产生阴影，参数效果:像右，向下移动,阴影透明程度，阴影颜色 */
+        text-shadow: 0 0 20px #000;
+    }
+
+    .data .title1 {
+        color: #fff;
+        /* 字体粗细，大小，字体族（字体风格） */
+        font: 800 40px '';
+        margin-bottom: 5px;
+        position: relative;
+    }
+
+    .data .title1 span {
+        position: absolute;
+        color: #000;
+        font-size: 15px;
+        top: 10px;
+        padding: 0 15px;
+        border-radius: 15px;
+        background-color: #b8b7ef;
+    }
+
+    .data .title2 {
+        color: #fff;
+        /* 字体粗细，大小，字体族（字体风格） */
+        font: 500 20px '';
+        margin-bottom: 5px;
+        position: absolute;
+    }
+
+    .foot {
+        line-height: 26px;
+        color: #444;
+    }
+
+    .tags {
+        padding-top: 80px;
+        padding-left: 25px;
+        width: 250px;
+        float: left;
+        text-align: center;
+    }
+
+    .tag {
+        background: #9795f0;
+        color: #fff;
+        border-radius: 10px;
+        padding: 3px 8px;
+        margin-right: 10px;
+        font-size: 15px;
+        line-height: 35px;
+        cursor: pointer;
+    }
+
+
+    .tag:hover {
+        background: hsl(172, 71%, 81%);
+        color: #444;
+    }
+
+    .introduce {
+        padding: 15px 0 0 35px;
+        width: 380px;
+        float: left;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div class="shell">
+            <img src="./img/2.jpg" class="cover">
+            <div class="head">
+                <div class="data">
+                    <div class="title1">UMR-CODE<span>BILIBILI</span></div>
+                    <div class="title2">网页全栈开发</div>
+                </div>
+            </div>
+
+            <div class="foot">
+                <div class="tags">
+                    <span class="tag">#html</span>
+                    <span class="tag">#js</span>
+                    <span class="tag">#css</span>
+                    <span class="tag">#java</span>
+                    <span class="tag">#mysql</span>
+                    <span class="tag">#ts</span>
+                    <span class="tag">#vue</span>
+                    <span class="tag">#springBoot</span>
+                </div>
+            </div>
+
+            <div class="introduce">
+                <p> Hello everyone, I am a junior boy, I am very glad to have the opportunity to introduce myself to
+                    you. I have a strong interest in CSS and love sports.
+                    First, let me talk about my love of CSS. CSS is a language for web design and layout that makes web
+                    pages beautiful, readable, and easy to navigate. One of the things I like about CSS is its
+                    flexibility, by using different styles and layouts...</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
